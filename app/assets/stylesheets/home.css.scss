@@ -28,6 +28,9 @@ hr {
   clear: both;
 }
 
+header {
+  text-align: center;
+}
 body {
   background-color: white;
   //background-image: asset-data-url('background-1.png');
@@ -96,7 +99,7 @@ div {
   position: relative;
   top: 143px;
   background-color: white;
-  width: 1200px;
+  max-width: 980px;
   margin: 0 auto;
   text-align: center;
   -webkit-box-shadow: -3px 0px 10px 0px #333, 3px 0px 10px 0px #333;
@@ -134,4 +137,14 @@ div {
 
 .rememberable {
   margin-top: 15px;
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
 }

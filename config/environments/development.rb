@@ -61,7 +61,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # Mail send - need for devise
+  # Mail send - need for users
   ENV['SMTP_USERNAME'] = 'sokalmet2018@gmail.com'
   ENV['SMTP_PASSWORD'] = 'Benzopilin_1'
 
