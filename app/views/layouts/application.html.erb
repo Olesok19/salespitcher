@@ -2,14 +2,45 @@
 <html>
   <head>
     <title>Staffapp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
   </head>
 
   <body>
-    <%= yield %>
+  <header class="navbar-fixed-top">
+    <div class="header">
+      <h1 class="logo">STAFFAPP</h1>
+    </div>
+  </header>
+
+  <div class="wrapper clearfix">
+    <div id="main">
+      <% flash.each do |name, msg| %>
+          <div class="alert_wrapper">
+            <div class="alert alert-dismissible" role="alert">
+              <%= content_tag :span, msg, class: 'notice' %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
+            </div>
+          </div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p class="copyright">
+      Copyright &#169; 2019
+    </p>
+  </footer>
   </body>
 </html>

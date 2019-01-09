@@ -5,12 +5,16 @@ require 'sprockets/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups)
+Bundler.require(:default, Rails.env)
 
 module Staffapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+
+    # Custom directories with classes and modules you want to be autoloadable.
+    # config.autoload_paths << Rails.root.join('lib')
+    # config.autoload_paths << Rails.root.join('vendor')
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
@@ -24,6 +28,8 @@ module Staffapp
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.active_job.queue_adapter = :sidekiq
+
     # Default headers
     config.action_dispatch.default_headers = {
       'X-XSS-Protection' => '1; mode=block',
@@ -34,9 +40,9 @@ module Staffapp
     ActionDispatch::Callbacks.after do
       # Reload the factories
       if Rails.env.development?
-        unless FactoryGirl.factories.blank? # first init will load factories, this should only run on subsequent reloads
-          FactoryGirl.sequences.clear
-          FactoryGirl.factories.clear
+        unless FactoryBot.factories.blank? # first init will load factories, this should only run on subsequent reloads
+          FactoryBot.sequences.clear
+          FactoryBot.factories.clear
         end
       end
     end

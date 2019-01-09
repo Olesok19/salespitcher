@@ -21,10 +21,8 @@
 //= require jquery-ui-combobox
 //= require js.cookie
 //= require autogrow/jquery.autogrow
-//= require alert
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 $(function() {
