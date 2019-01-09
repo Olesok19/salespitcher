@@ -1,0 +1,50 @@
+# See https://help.github.com/articles/ignoring-files for more about ignoring files.
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+/vendor/bundle
+/log/*
+/tmp/*
+/public/system/*
+/public/uploads/*
+/coverage/*
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+.DS_Store
+.idea/
+.idea*
+doc/
+*.swp
+*~
+.project
+server.csr
+server.key
+*.crt
+*.key
+*.psql
+*.dump
+*.sql
+*.rdb
+.byebug_history
+benchmark1.txt
+
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
+yarn-error.log
+package-lock.json
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
