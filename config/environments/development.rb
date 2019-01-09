@@ -60,4 +60,33 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Mail send - need for devise
+  ENV['SMTP_USERNAME'] = 'sokalmet2018@gmail.com'
+  ENV['SMTP_PASSWORD'] = 'Benzopilin_1'
+
+  host = 'localhost:3000'
+  config.action_mailer.asset_host = "http://#{host}"
+  config.action_mailer.default_url_options = { :host => host }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+
+  ActionMailer::Base.smtp_settings = {
+    :from => 'sokalmet2018@gmail.com',
+    :user_name      => ENV['SMTP_USERNAME'],
+    :password       => ENV['SMTP_PASSWORD'],
+    :domain => host,
+    :address => 'smtp.gmail.com',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
+
+  ENV['WEBSITE_URL'] = 'localhost:3000'
+  ENV['DOMAIN_URL'] = 'localhost:3000'
+  ENV['ADMIN_EMAIL'] = 'sokalmet2018@gmail.com'
+  ENV['GOOGLE_CLIENT_ID'] = '741215578572-e1ogd1kfqlfv3hantq295qp0dquv01ke.apps.googleusercontent.com'
+  ENV['GOOGLE_CLIENT_SECRET'] = 'KOXCZBLcKpXSSswUU_z6WYBN'
 end

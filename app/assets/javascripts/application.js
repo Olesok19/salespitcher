@@ -10,7 +10,25 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui
+//= require bootstrap.min
+//= require underscore_settings
+//= require underscore-min
+//= require jquery.easy-overlay
+//= require jquery.ui.touch-punch.min
+//= require jquery-ui-combobox
+//= require js.cookie
+//= require autogrow/jquery.autogrow
+//= require alert
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $(document).on('click dblclick', 'textarea', function () {
+    $(this).autoGrow();
+  });
+});
