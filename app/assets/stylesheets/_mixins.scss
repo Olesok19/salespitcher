@@ -33,13 +33,22 @@
   1px 1px $spread $color;
 }
 
-@mixin buttons($color) {
-  width: 102px;
-  height: 31px;
-  background-color: $color;
-  border-radius: 8px;
-  margin: 5px;
-  color: white;
+@mixin buttons {
+  .admin-section {
+    display: inline-block;
+    height: 46px;
+    width: 150px;
+    margin: 5px auto;
+    padding-top: 12px;
+    background-color: #3cc79c;
+    border-radius: 10%;
+    .create_button, .back_button {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
 }
 
 @mixin basket($image) {

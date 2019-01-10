@@ -4,9 +4,11 @@ Rails.application.routes.draw do
     :omniauth_callbacks => 'users/omniauth_callbacks'
   }
   get 'home/index'
-  get '/users' => redirect('/users/sign_up')
+  get '/users' => redirect('/users/sign_in')
+  patch '/users/change_access_rights'
 
   resources :posts
+  resources :groups
   resources :group_users
   resources :reviews, only: [:create]
 

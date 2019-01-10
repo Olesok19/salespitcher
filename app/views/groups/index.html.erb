@@ -1,0 +1,31 @@
+<div class='card-header'>GROUPS</div>
+<div class="new-group">
+  <div class="admin-section">
+    <%= link_to "Create New Group", new_group_path, class: "create_button" %>
+  </div>
+  <div class="admin-section">
+    <%= link_to "Back", home_index_path, class: "back_button" %>
+  </div>
+</div>
+<div class='card-block'>
+  <table class='table table-striped posts'>
+    <tr>
+      <th class='width_post'>Title</th>
+      <th class='width_date'>Date of creation</th>
+      <th class='width_a' colspan='2'>Actions</th>
+    </tr>
+    <% @groups.each do |group| %>
+        <tr>
+          <td class="width_petition"><%= link_to group.group_name, group_path(group.id) %></td>
+          <td class="width_date"><%= formatted_date(group) %></td>
+          <td class="width_a" colspan="2">
+            <%= link_to "Edit", edit_group_path(group.id) %>
+            <span></span>   
+            <%= link_to "Delete", group_path(group.id), method: 'delete' %>
+          </td>
+        </tr>
+    <% end %>
+    <%= will_paginate @groups %>
+  </table>
+  <span></span>
+</div>

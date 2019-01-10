@@ -1,0 +1,12 @@
+<div class="card-header">EDIT GROUP NAME</div>
+<div class="card-block">
+  <%= form_for @group, class: 'form' do |f| %>
+      <div class="form-group">
+        <label>Title of group</label>
+        <%= f.text_field :group_name, class: "form-control", size: 65, placeholder: "Enter the title of group" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save", class: "btn btn-primary" %>
+      </div>
+  <% end %>
+</div>

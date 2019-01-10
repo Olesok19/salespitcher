@@ -95,11 +95,12 @@ body {
 
 .home {
   .admin-section {
+    display: inline-block;
     height: 46px;
     width: 110px;
     margin: 5px auto;
     padding-top: 12px;
-    background-color: red;
+    background-color: #3cc79c;
     border-radius: 10%;
     .admin_button {
       color: white;

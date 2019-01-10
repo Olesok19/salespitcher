@@ -1,8 +1,13 @@
 <div class="home">
-  <% if current_user.admin? %>
+  <% if current_user&.admin? %>
     <div class="admin-section">
-      <a href="/posts" class="admin_button">Admin panel
-      </a>
+      <a href="/posts" class="admin_button">Posts</a>
+    </div>
+    <div class="admin-section">
+      <a href="/posts" class="admin_button">Users</a>
+    </div>
+    <div class="admin-section">
+      <a href="/groups" class="admin_button">Groups</a>
     </div>
   <% end %>
   <iframe src="https://www.staffapp.ch"></iframe>

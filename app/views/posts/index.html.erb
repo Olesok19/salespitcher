@@ -1,6 +1,11 @@
 <div class='card-header'>POSTS</div>
 <div class="new-post">
-  <%= link_to "Create New Post", new_post_path, class: "create_button" %>
+  <div class="admin-section">
+    <%= link_to "Create New Post", new_post_path, class: "create_button" %>
+  </div>
+  <div class="admin-section">
+    <%= link_to "Back", home_index_path, class: "back_button" %>
+  </div>
 </div>
 <div class='card-block'>
   <table class='table table-striped posts'>

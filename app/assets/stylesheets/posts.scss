@@ -1,3 +1,5 @@
+@import 'mixins';
+
 .card-header {
   font-size: 25px;
   color: #FFF;
@@ -36,17 +38,8 @@
 }
 
 .new-post {
-  height: 46px;
-  width: 140px;
-  margin: 5px auto;
-  padding-top: 12px;
-  background-color: #d800ff;
-  border-radius: 10%;
-  .create_button {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-  }
+  @include buttons;
 }
-
+ #post_file {
+   margin: 0 auto;
+ }
