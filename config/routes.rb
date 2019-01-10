@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get 'home/index'
   get '/users' => redirect('/users/sign_up')
 
+  resources :posts
+  resources :group_users
+  resources :reviews, only: [:create]
+
   root to: 'home#index'
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

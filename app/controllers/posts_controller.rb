@@ -1,25 +1,19 @@
 class PostsController < ApplicationController
   #GET /posts
   def index
-    if params[:my]
-      @petitions = Petition.where(user: current_user).paginate(:page => params[:page])
-    else
-      @petitions = Petition.all.paginate(:page => params[:page])
-    end
+    @posts = Post.all.paginate(:page => params[:page])
   end
 
   #GET /posts/1
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   #PUT /posts/1
   def update
-    if @petition.update_attributes(petition_params)
-      flash[:notice] = "The petition has been successfully updated"
-      redirect_to petitions_path({:my => true})
+    if @post.update_attributes(post_params)
+      flash[:notice] = "The post has been successfully updated"
+      redirect_to post_path
     else
       flash[:notice] = "Wrong data!"
       render "edit"
@@ -29,13 +23,13 @@ class PostsController < ApplicationController
   #DELETE /posts/1
   def destroy
     @post.destroy
-    flash[:notice] = "The petition removed"
-    redirect_to petitions_path({:my => true})
+    flash[:notice] = "The post removed"
+    redirect_to posts_path
   end
 
-  #POST /petitions
+  #POST /post
   def create
-    @post = current_user.posts.create(post_params)
+    @post = Post.create(post_params)
     if @post.save
       flash[:notice] = "The post saved"
       redirect_to posts_path
@@ -56,11 +50,11 @@ class PostsController < ApplicationController
 
   private
 
-  def find_petition
+  def find_post
     @post = Post.find(params[:id])
   end
 
-  def petition_params
+  def post_params
     params.require(:post).permit(:title, :text, :file)
   end
 end

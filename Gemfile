@@ -6,7 +6,6 @@ ruby '2.5.3'
 gem 'rails', '5.2.1.1'                                # Ruby on Rails is a full-stack web framework
 gem 'bootsnap'
 gem 'puma', '~> 3.11', '>= 3.12.0'                    # Webserver recommended by heroku
-gem 'sass-rails', '~> 5.0', '>= 5.0.7'                # Needed for rails deploys on heroku
 gem 'uglifier', '~> 4.1', '>= 4.1.20'                 # Ruby wrapper for UglifyJS JavaScript compressor
 gem 'autoprefixer-rails', '~> 9.3.1'                  # Parse CSS and add vendor prefixes to CSS rules
 gem 'bootstrap-select-rails', '~> 1.12', '>= 1.12.4'  # jQuery plugin that utilizes Bootstrap's dropdown.js to style
@@ -20,13 +19,12 @@ gem 'momentjs-rails', '~> 2.17.1'                     # Necessary for datepicker
 gem 'nokogiri', '~> 1.8', '>= 1.8.5'                  # HTML and XML Parser
 gem 'omniauth', '~> 1.8', '>= 1.8.1'                  # Needed for signups
 gem 'omniauth-google-oauth2', '~> 0.5.2'              # Google specific omnioauth support
-gem 'pagy', '~> 1.0.0'                                # Pagination gem
 gem 'parallax-rails'                                  # Need for parallax effect
 gem 'pg', '~> 0.21.0'                                 # Postgres gem
 gem 'pg_search', '~> 2.1.2'                           # Implement fast text search in Postgres
-gem 'sqlite3', '~> 1.3', '>= 1.3.11'                  # SQlite gem
 gem 'premailer-rails', '~> 1.10', '>= 1.10.2'         # In-lines stylesheets and rewrite relative URLs in emails
 gem 'qtip2-jquery-rails', '~> 2.2.100'                # Provides the qTip2 jQuery plugin for the Rails asset pipeline
+gem 'sqlite3', '~> 1.3', '>= 1.3.11'                  # SQlite gem
 gem 'redis', '4.0.1'                                  # A Ruby client that tries to match Redis' API one-to-one
 gem 'redis-rails', '5.0.2'                            # Gem for redis cache
 gem 'rubyzip', '~> 1.2.1'                             # Zip up files (for large email attachments)
@@ -37,6 +35,8 @@ gem 'sinatra', '~> 2.0', '>= 2.0.4'                   # Microframework, used for
 gem 'sprockets', '~> 3.7', '>= 3.7.2'                 # rails-asset-pipeline
 gem 'sprockets-rails', '~> 3.2.1'                     # Sprockets Rails integration
 gem 'webpacker', '~> 3.5'                             # Webpacker gem to manage JS like modules
+gem 'will_paginate', '~> 3.1.0'                       # Pagination gem
+
 
 group :development, :test do
   gem 'awesome_print', '~> 1.8'                       # Nicely formatted data structures in console

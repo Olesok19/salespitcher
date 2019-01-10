@@ -1,4 +1,12 @@
 class User < ApplicationRecord
+  has_many :posts
+  has_many :reviews
+  has_many :group_users
+
+  validates :email, presence: true, uniqueness: true
+
+
+
   # Include default users modules
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
