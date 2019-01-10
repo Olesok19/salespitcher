@@ -1,41 +1,40 @@
 class PostsController < ApplicationController
-  #GET /posts
   def index
     @posts = Post.all.paginate(:page => params[:page])
   end
 
-  #GET /posts/1
   def show; end
 
-  def edit; end
+  def edit
+    find_post
+  end
 
-  #PUT /posts/1
   def update
+    find_post
     if @post.update_attributes(post_params)
-      flash[:notice] = "The post has been successfully updated"
-      redirect_to post_path
+      flash[:notice] = 'The post has been successfully updated'
+      redirect_to posts_path
     else
-      flash[:notice] = "Wrong data!"
-      render "edit"
+      flash[:notice] = 'Wrong data!'
+      render 'edit'
     end
   end
 
-  #DELETE /posts/1
   def destroy
+    find_post
     @post.destroy
-    flash[:notice] = "The post removed"
+    flash[:notice] = 'The post removed'
     redirect_to posts_path
   end
 
-  #POST /post
   def create
-    @post = Post.create(post_params)
+    @post = Post.new(post_params)
     if @post.save
-      flash[:notice] = "The post saved"
+      flash[:notice] = 'The post saved'
       redirect_to posts_path
     else
-      flash[:notice] = "Wrong data!"
-      render "new"
+      flash[:notice] = 'Wrong data!'
+      render 'new'
     end
   end
 

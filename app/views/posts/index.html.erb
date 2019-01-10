@@ -1,25 +1,28 @@
 <div class='card-header'>POSTS</div>
+<div class="new-post">
+  <%= link_to "Create New Post", new_post_path, class: "create_button" %>
+</div>
 <div class='card-block'>
-  <table class='table table-striped'>
+  <table class='table table-striped posts'>
     <tr>
-      <th class='width_petition'>Post</th>
-      <th class='width_votes'>Reviews</th>
+      <th class='width_post'>Title</th>
+      <th class='width_reviews'>Reviews</th>
       <th class='width_date'>Date of review</th>
       <th class='width_a' colspan='2'>Actions</th>
     </tr>
     <% @posts.each do |post| %>
         <tr>
           <td class="width_petition"><%= link_to post.title, post_path(post.id) %></td>
-          <td class="width_votes"><%= post.reviews_count %></td>
-          <td class="width_date"><%= post.decorate.formatted_date %></td>
+          <td class="width_votes"><%= post.reviews.size %></td>
+          <td class="width_date"><%= formatted_date(post) %></td>
           <td class="width_a" colspan="2">
             <%= link_to "Edit", edit_post_path(post.id) %>
             <span></span>   
-            <%= link_to "Delete", post_path(post.id), method: "delete" %>
+            <%= link_to "Delete", post_path(post.id), method: 'delete' %>
           </td>
         </tr>
-        <%= will_paginate @posts %>
     <% end %>
+    <%= will_paginate @posts %>
   </table>
   <span></span>
 </div>

@@ -11,6 +11,7 @@ gem 'autoprefixer-rails', '~> 9.3.1'                  # Parse CSS and add vendor
 gem 'bootstrap-select-rails', '~> 1.12', '>= 1.12.4'  # jQuery plugin that utilizes Bootstrap's dropdown.js to style
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'   # Calendar date picker
 gem 'browser', '~> 2.5', '>= 2.5.3'                   # Easy browser make/version detection. See documentation at https://github.com/fnando/browser
+gem 'carrierwave', '~> 1.0'                           # Gem provides a simple and extremely flexible way to upload files
 gem 'devise', '~> 4.4', '>= 4.5.0'                    # User authentication for users
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'      # http://fontawesome.io/get-started/ for icons
 gem 'jquery-rails', '~> 4.3.3'                        # JQuery
@@ -36,7 +37,6 @@ gem 'sprockets', '~> 3.7', '>= 3.7.2'                 # rails-asset-pipeline
 gem 'sprockets-rails', '~> 3.2.1'                     # Sprockets Rails integration
 gem 'webpacker', '~> 3.5'                             # Webpacker gem to manage JS like modules
 gem 'will_paginate', '~> 3.1.0'                       # Pagination gem
-
 
 group :development, :test do
   gem 'awesome_print', '~> 1.8'                       # Nicely formatted data structures in console
