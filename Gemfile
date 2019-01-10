@@ -67,7 +67,6 @@ group :test do
   gem 'database_cleaner', '~> 1.6', '>= 1.7.0'        # Database_cleaner is not required, but highly recommended
   gem 'rspec-html-matchers', '~> 0.9.1'               # For testing complex html output, useful for testing forms
   gem 'rspec-rails', '~> 3.8', '>= 3.8.1'             # Testing framework for Rails
-  gem 'rspec-sidekiq', '~> 3.0.3'                     # Rspec helper for Sidekiq
   gem 'selenium-webdriver', '~> 3.141.0'              # WebDriver is a tool for writing automated tests of websites
   gem 'shoulda-callback-matchers', '~> 1.1.4'         # Matchers to test before, after and around hooks
   gem 'shoulda-matchers', '~> 3.1.2'                  # Collection of testing matchers extracted from Shoulda http://thoughtbot.com/community
