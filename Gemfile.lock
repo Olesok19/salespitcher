@@ -173,6 +173,7 @@ GEM
       omniauth (~> 1.9)
     orm_adapter (0.5.0)
     pagy (1.0.0)
+    parallax-rails (1.0.0)
     parallel (1.12.1)
     parallel_tests (2.27.1)
       parallel
@@ -398,6 +399,7 @@ DEPENDENCIES
   omniauth (~> 1.8, >= 1.8.1)
   omniauth-google-oauth2 (~> 0.5.2)
   pagy (~> 1.0.0)
+  parallax-rails
   parallel_tests (~> 2.21, >= 2.27.0)
   pg (~> 0.21.0)
   pg_search (~> 2.1.2)

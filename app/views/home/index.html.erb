@@ -1,4 +1,9 @@
 <div class="home">
-  <h1>Your catalog</h1>
-
+  <% if current_user.admin? %>
+    <div class="admin-section">
+      <a href="/" class="admin_button">Admin panel
+      </a>
+    </div>
+  <% end %>
+  <iframe src="https://www.staffapp.ch"></iframe>
 </div>

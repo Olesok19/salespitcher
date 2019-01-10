@@ -2,7 +2,8 @@
   "name": "staffapp",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5"
+    "@rails/webpacker": "3.5",
+    "jquery-parallax.js": "^1.5.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"

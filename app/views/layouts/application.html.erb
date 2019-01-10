@@ -15,24 +15,34 @@
   </head>
 
   <body>
-  <header class="navbar-fixed-top">
-    <div class="header">
-      <h1 class="logo">STAFFAPP</h1>
+  <header class="navbar">
+    <div class="row">
+      <div class="col-sm-9 header-l">
+        <a href="/">
+          <img src="//static1.squarespace.com/static/5767df11414fb55eccdbd2e3/t/5767dff92e69cf4416dc21b1/1546538733336/?format=1500w" alt="StaffApp" class="Header-branding">
+        </a>
+      </div>
+      <div class="col-sm-3 header-r">
+        <% if current_user %>
+            <%= current_user.email %>
+            <%= link_to " (Log out)", destroy_user_session_path, method: "delete" %>
+        <% else %>
+            <%= link_to "Sign up", new_user_registration_path %>
+            <%= link_to " | Log in", new_user_session_path %>
+        <% end %>
+      </div>
     </div>
   </header>
-
-  <div class="wrapper clearfix">
-    <div id="main">
-      <% flash.each do |name, msg| %>
-          <div class="alert_wrapper">
-            <div class="alert alert-dismissible" role="alert">
-              <%= content_tag :span, msg, class: 'notice' %>
-              <button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
-            </div>
+  <div class="wrapper">
+    <% flash.each do |name, msg| %>
+        <div class="alert_wrapper">
+          <div class="alert alert-dismissible" role="alert">
+            <%= content_tag :span, msg, class: 'notice' %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="close">&times;</button>
           </div>
-      <% end %>
-      <%= yield %>
-    </div>
+        </div>
+    <% end %>
+    <%= yield %>
   </div>
 
   <!-- FOOTER -->

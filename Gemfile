@@ -21,9 +21,10 @@ gem 'nokogiri', '~> 1.8', '>= 1.8.5'                  # HTML and XML Parser
 gem 'omniauth', '~> 1.8', '>= 1.8.1'                  # Needed for signups
 gem 'omniauth-google-oauth2', '~> 0.5.2'              # Google specific omnioauth support
 gem 'pagy', '~> 1.0.0'                                # Pagination gem
-gem 'sqlite3', '~> 1.3', '>= 1.3.11'                  # SQlite gem
+gem 'parallax-rails'                                  # Need for parallax effect
 gem 'pg', '~> 0.21.0'                                 # Postgres gem
 gem 'pg_search', '~> 2.1.2'                           # Implement fast text search in Postgres
+gem 'sqlite3', '~> 1.3', '>= 1.3.11'                  # SQlite gem
 gem 'premailer-rails', '~> 1.10', '>= 1.10.2'         # In-lines stylesheets and rewrite relative URLs in emails
 gem 'qtip2-jquery-rails', '~> 2.2.100'                # Provides the qTip2 jQuery plugin for the Rails asset pipeline
 gem 'redis', '4.0.1'                                  # A Ruby client that tries to match Redis' API one-to-one
@@ -48,14 +49,14 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'                                        # Spring speeds up development by keeping application running in the background
-  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener', '~> 1.6'                       # Match emails in dev env
   gem 'letter_opener_web', '~> 1.3.4'                 # GUI for letter_opener
+  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'meta_request', '~> 0.6.0'                      # Sends backend meta info to Chrome plugin (requires install of https://chrome.google.com/webstore/detail/railspanel/gjpfobpafnhjhbajcjgccbbdofdckggg?hl=en-US)
   gem 'parallel_tests', '~> 2.21', '>= 2.27.0'        # Run tests in parallel
   gem 'rubocop', '~> 0.60.0', require: false          # A Ruby static code analyzer https://github.com/bbatsov/rubocop
+  gem 'spring'                                        # Spring speeds up development by keeping application running in the background
+  gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'traceroute', '~> 0.8.0'                        # Allows for easy searching of unused routes - "$ rake traceroute"
   gem 'web-console', '~> 3.7.0'                       # Access an IRB console on exceptions page/console
 end

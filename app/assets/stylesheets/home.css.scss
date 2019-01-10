@@ -33,11 +33,6 @@ header {
 }
 body {
   background-color: white;
-  //background-image: asset-data-url('background-1.png');
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-div {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -51,12 +46,35 @@ div {
   }
 }
 
-.white {
-  background-color: white;
-}
-
 .header {
   height: 83px;
+}
+
+.header-l {
+  text-align: left;
+  padding-left: 5%;
+  @media only screen
+  and (max-width:767px) {
+    display: none;
+  }
+}
+
+.header-r {
+  padding-top: 17px;
+  @media only screen
+  and (max-width:767px) {
+    margin-left: 30px;
+  }
+}
+
+.Header-branding {
+  width: 162px;
+}
+
+.logo {
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .dropdown {
@@ -68,75 +86,51 @@ div {
   margin-right: 5px;
 }
 
-.dropdown {
-  .dropdown-toggle {
-    color: white;
-    font-size: 14px;
-    text-align: center;
-    padding: 7px 3px 0 13px;
+.navbar {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin: 7px 0 12px 0;
+  max-width: 99%;
+}
+
+.home {
+  .admin-section {
+    height: 46px;
+    width: 110px;
+    margin: 5px auto;
+    padding-top: 12px;
+    background-color: red;
+    border-radius: 10%;
+    .admin_button {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
   }
-}
-
-.glyphicon-chevron-down {
-  padding-left: 6px;
-  top: 4px;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.logo {
-  font-size: 22px;
-  color: black;
-  margin-top: 7px;
-  font-weight: bold;
 }
 
 /*WRAPPER*/
 
 .wrapper {
-  position: relative;
-  top: 143px;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: 0;
+  bottom: 70px;
   background-color: white;
-  max-width: 980px;
+  max-width: 1800px;
   margin: 0 auto;
   text-align: center;
   -webkit-box-shadow: -3px 0px 10px 0px #333, 3px 0px 10px 0px #333;
-  #main {
-    h1 {
-      background-color: white;
-      height: 45px;
-    }
-    table {
-      margin: 0 auto;
-    }
-    .entry {
-      width: 48%;
-      padding: 5px;
-      float: left;
-      border: solid;
-      border-width: 1px;
-      border-radius: 2px;
-      margin: 0 10px 35px;
-      .store-description{
-        text-align: left;
-        height: 144px;
-      }
-      img{
-        width: auto;
-        height: 180px !important;
-      }
-      p {
-        width: 90%;
-        height: 100px;
-      }
-    }
+  .home {
+    height: 100%;
   }
 }
 
-.rememberable {
-  margin-top: 15px;
+iframe {
+  width: 100%;
+  height: 100%;
 }
 
 footer {
